@@ -123,3 +123,22 @@ a:visited{
 .messagelog {
     height: 7.1em !important;
 }
+
+header h1, header span, footer button {
+    font-size: 15pt;
+}
+
+header {
+    padding-right: 5px !important;
+}
+
+header span {
+    justify-content: center !important;
+    background-color: #333;
+    border: 1px solid #555;
+    padding: 2px 1rem;
+    margin: 2.5px;
+    border-radius: 10px;
+    width: 5rem;
+}
+
