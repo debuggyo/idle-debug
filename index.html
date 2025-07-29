@@ -32,6 +32,7 @@
         <span style="flex-grow: 1.1; text-align: center;">{{formatNumber(money, 2, 1e12)}} $</span>
         <span class="inline-resource" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/gem.png"/> {{formatNumber(gems, 2, 1e12, 0)}}</span>
         <span class="inline-resource" v-if="highestMineObjectLevel >= 90" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/planetcoin.png"/> {{formatNumber(planetCoins, 2, 1e12, 0)}}</span>
+        <span class="inline-resource" v-if="highestMineObjectLevel >= 170" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/wisdom.png"/> {{formatNumber(wisdom, 2, 1e12, 0)}}</span>
     </header>
     <main>
         <article class="main" v-if="settings.tab === 'main'">
