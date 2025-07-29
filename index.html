@@ -1,34 +1,34 @@
 <!doctype html>
 <html>
 <head>
-    <title>Idle Mine: Remix</title>
+    <title>Idle Debug</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="main.css"/>
-    <link id="css_theme" rel="stylesheet" href="Themes/light.css"/>
+    <link id="css_theme" rel="stylesheet" href="Themes/debuggy.css"/>
 
     <meta name="description"
             content="Incremental Game based on Idle Mine by Crovie."/>
     <meta name="keywords" content="games, game, idle, incremental, idle mine. idle mine remix"/>
-    <meta name="url" content="https://veprogames.github.io/idle-mine-remix"/>
-    <meta name="og:title" content="Idle Mine: Remix"/>
+    <meta name="url" content="https://debuggyo.github.io/idle-debug"/>
+    <meta name="og:title" content="Idle Debug"/>
     <meta name="og:type" content="website"/>
-    <meta name="og:url" content="https://veprogames.github.io/idle-mine-remix"/>
+    <meta name="og:url" content="https://debuggyo.github.io/idle-debug"/>
     <meta name="og:description"
             content="Incremental Game based on Idle Mine by Crovie."/>
-    <meta name="og:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
+    <meta name="og:image" content="https://debuggyo.github.io/idle-debug/Images/logo.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Idle Mine: Remix"/>
+    <meta name="twitter:title" content="Idle Debug"/>
     <meta name="twitter:description"
             content="Incremental Game based on Idle Mine by Crovie."/>
-    <meta name="twitter:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
+    <meta name="twitter:image" content="https://debuggyo.github.io/idle-debug/Images/logo.png"/>
 </head>
 <body>
 
 <div id="app">
     <canvas id="cache" ref="cache" width="256" height="224"></canvas>
     <header>
-        <h1 style="flex-grow: 1;">Idle Mine: Remix</h1>
+        <h1 style="flex-grow: 1;">Idle Debug</h1>
         <span style="flex-grow: 1.1; text-align: center;">{{formatNumber(money, 2, 1e12)}} $</span>
         <span class="inline-resource" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/gem.png"/> {{formatNumber(gems, 2, 1e12, 0)}}</span>
         <span class="inline-resource" v-if="highestMineObjectLevel >= 90" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/planetcoin.png"/> {{formatNumber(planetCoins, 2, 1e12, 0)}}</span>
@@ -153,6 +153,8 @@
             <span>Theme</span>
             <button @click="setTheme('light'); saveGame();">Light</button>
             <button @click="setTheme('dark'); saveGame();">Dark</button>
+            <button @click="setTheme('debuggydefault'); saveGame();">debuggydefault</button>
+            <button @click="setTheme('debuggy'); saveGame();">debuggy</button>
             <br/>
             <label><span>Show Mineral Level</span><input type="checkbox" v-model="settings.showMineObjLevel"/></label>
             <br/>
@@ -185,7 +187,7 @@
             </div>
             <div class="story-milestones" ref="storymilestones">
                 <div v-if="storyDisplayed('gameStart')">
-                    <h3>Welcome to Idle Mine: Remix!</h3>
+                    <h3>Welcome to Idle Debug!</h3>
                     <p>So you have decided to start with mining. You have heard that many treasures lie down below the surface, so you
                     can't wait to find out what you can find. Maybe you can become rich?<br/>
                     There's you, and your Auto-Mining-Device. Let's get started!</p>
@@ -392,7 +394,7 @@
                 <div v-if="storyDisplayed('pluto')">
                     You did it! You mined a planet! Mmh, it's just a dwarf planet, but it was a real planet until 2006.
                     <div class="story-quote"><mine-object :level="100" :nodamage="true"></mine-object><span>Almost a Planet</span></div>
-                    Why do Objects keep reappearing here after you mined them? It seems like to universe of Idle Mine: Remix says no to several laws of physics.
+                    Why do Objects keep reappearing here after you mined them? It seems like to universe of Idle Debug says no to several laws of physics.
                 </div>
                 <div v-if="storyDisplayed('theMoon')">
                     You just mined the Moon! Luckily it is reappearing every time you mine it...<br/>
@@ -492,7 +494,7 @@
                     <p>There are even more Upgrades regarding Wisdom. Numbers will only grow faster now!</p>
                 </div>
                 <div v-if="storyDisplayed('mineSun')">
-                    You mined our Sun... well, since were in the Idle Mine: Remix realm, the Sun reappeared the moment you mined it, so no worries!
+                    You mined our Sun... well, since were in the Idle Debug realm, the Sun reappeared the moment you mined it, so no worries!
                     <div class="story-quote"><mine-object :level="173" :nodamage="true"></mine-object><span>Giver of Life</span></div>
                 </div>
                 <div v-if="storyDisplayed('minePolaris')">
